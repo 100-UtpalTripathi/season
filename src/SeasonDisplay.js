@@ -1,24 +1,7 @@
 import React from 'react'
 import './SeasonDisplay.css'
 
-const SeasonConfig = {
-  Winter : {
-    text : "Bahut Jada Hai, nahi ho raha kya..?",
-    icon : 'snowflake',
-    color : 'purple'
-  },
-  Summer : {
-    text : "Body heat up ho raha..",
-    icon : 'sun',
-    color : 'red'
-  }
-}
-const getSeason = (lati, month) => {
-  if(month > 2 && month < 9)
-    return lati > 0 ? 'Summer' : 'Winter'
-  else
-    return lati > 0 ? 'Winter' : 'Summer'
-}
+
 const SeasonDisplay = (props) => {
   const Season = getSeason(props.lat, new Date().getMonth())
   
@@ -37,5 +20,24 @@ const SeasonDisplay = (props) => {
     
   );
 }
+const SeasonConfig = {
+  Winter : {
+    text : "Bahut Jada Hai, nahi ho raha kya..?",
+    icon : 'snowflake',
+    color : 'purple'
+  },
+  Summer : {
+    text : "Body heat up ho raha..",
+    icon : 'sun',
+    color : 'red'
+  }
+}
+const getSeason = (lati, month) => {
+  if(month > 2 && month < 9)
+    return lati > 0 ? 'Summer' : 'Winter'
+  else
+    return lati > 0 ? 'Winter' : 'Summer'
+}
+
 
 export default SeasonDisplay;
